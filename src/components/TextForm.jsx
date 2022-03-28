@@ -54,6 +54,7 @@ const TextForm = (props) => {
             props.mode === "light" ? "dark" : "light"
           } mb-3`}
           onClick={handleUpClick}
+          disabled={text === ""}
         >
           Convert Uppercase
         </button>
@@ -63,6 +64,8 @@ const TextForm = (props) => {
             props.mode === "light" ? "dark" : "light"
           } mb-3 mx-2`}
           onClick={handleLowClick}
+          disabled={text === ""}
+
         >
           Convert Lowercase
         </button>
@@ -71,6 +74,7 @@ const TextForm = (props) => {
           className={`btn btn-outline-${
             props.mode === "light" ? "dark" : "light"
           } mb-3 mx-2`}
+          disabled={text === ""}
           onClick={handleClearText}
         >
           Clear Text
@@ -81,6 +85,8 @@ const TextForm = (props) => {
             props.mode === "light" ? "dark" : "light"
           } mb-3 mx-2`}
           onClick={handleCopy}
+          disabled={text === ""}
+
         >
           Copy Text
         </button>
@@ -90,22 +96,24 @@ const TextForm = (props) => {
             props.mode === "light" ? "dark" : "light"
           } mb-3 mx-2`}
           onClick={handleRemoveExtraSpaces}
+          disabled={text === ""}
+
         >
           Remove Extra Spaces
         </button>
 
         <h2>Text Summary</h2>
         <p>
-          {text.split(" ").length-1} words and {text.length} characters
+          {text.split(" ").filter(element => element.length!==0).length} words and {text.length} characters
         </p>
-        <p>{text.split(" ").length * 0.008} Minutes Read</p>
+        <p>{text.split(" ").filter(element => element.length!==0).length * 0.008} Minutes Read</p>
       </div>
 
       <h3>Preview</h3>
       <p>
         {text.length > 0
           ? text
-          : "Enter something in the above TextBox to preview it here!"}
+          : "Nothing to Preview!"}
       </p>
     </>
   );

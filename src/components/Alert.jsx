@@ -7,9 +7,11 @@ const Alert = (props) => {
         return cap;
     }
   return (
-    
-      props.alert && <div className={`alert alert-${props.alert.type}`} role="alert">
+      <div style={{height: '42px'}}>
+
+      {props.alert && <div className={`alert alert-${props.alert.type}`} role="alert">
         <strong>{capitalize(props.alert.type)}: </strong> {props.alert.msg}
+      </div>}
       </div>
     
   );

@@ -48,7 +48,7 @@ function App() {
         <TextForm
           mode={mode}
           showAlert={showAlert}
-          heading="Enter the text to Analyze"
+          heading="TextUtils-Copy text, Word Count, Character Count, Remove Extra Spaces."
         />
       </div>
     </>
