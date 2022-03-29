@@ -104,7 +104,7 @@ const TextForm = (props) => {
 
         <h2>Text Summary</h2>
         <p>
-          {text.split(" ").filter(element => element.length!==0).length} words and {text.length} characters
+          {text.split(/\s/).filter(element => element.length!==0).length} words and {text.length} characters
         </p>
         <p>{text.split(" ").filter(element => element.length!==0).length * 0.008} Minutes Read</p>
       </div>
